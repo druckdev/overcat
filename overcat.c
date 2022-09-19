@@ -22,11 +22,13 @@ void
 print_usage()
 {
 	printf("Usage: %s [OPTION]... FILE...\n", PROG_NAME);
-	printf("Concatenates overlapping files, removing the redundant overlaps.\n");
-	printf("\n");
-	printf("  -h, --help           Print the help message and exit.\n");
-	printf("  -o, --output=FILE    Write output to FILE instead of stdout.\n");
-	printf("  -v, --verbose        Enable verbose log messages on stderr.\n");
+	printf(
+"Concatenate files while keeping only one copy of redundant overlaps.\n"
+"\n"
+"  -h, --help           Print the help message and exit.\n"
+"  -o, --output=FILE    Write output to FILE instead of stdout.\n"
+"  -v, --verbose        Enable verbose log messages on stderr.\n"
+	);
 }
 
 /*
