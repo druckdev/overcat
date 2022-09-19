@@ -16,10 +16,10 @@
 	} while(0);
 
 /*
- * Print the program's usage to stdout.
+ * Print the program's help page to stdout.
  */
 void
-print_usage()
+print_help()
 {
 	printf("Usage: %s [OPTION]... FILE...\n", PROG_NAME);
 	printf(
@@ -87,7 +87,7 @@ main(int argc, char* argv[])
 	while (-1 != (opt = getopt_long(argc, argv, shortopts, longopts, NULL))) {
 		switch (opt) {
 		case 'h':
-			print_usage();
+			print_help();
 			if (out != stdout)
 				fclose(out);
 			return EXIT_SUCCESS;
@@ -108,7 +108,7 @@ main(int argc, char* argv[])
 	}
 
 	if (argc - optind <= 0) {
-		print_usage();
+		print_help();
 		return EXIT_FAILURE;
 	}
 
