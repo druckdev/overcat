@@ -23,7 +23,7 @@ print_help()
 {
 	printf("Usage: %s [OPTION]... FILE...\n", PROG_NAME);
 	printf(
-"Concatenate files while keeping only one copy of redundant overlaps.\n"
+"Concatenate FILEs while keeping only one copy of redundant overlaps.\n"
 "\n"
 "  -h, --help           Print the help message and exit.\n"
 "  -o, --output=FILE    Write output to FILE instead of stdout.\n"
