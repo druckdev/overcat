@@ -1,0 +1,38 @@
+= overcat(1)
+:doctype: manpage
+:docdate: 2019-03-03
+:release-version: 0.0.1
+:manmanual: overcat manual
+:mansource: overcat {release-version}
+:man-linkstyle: pass:[blue R < >]
+
+== NAME
+
+overcat - Concatenate overlapping files
+
+== SYNOPSIS
+
+*overcat* [__OPTION__]... __FILE__...
+
+== DESCRIPTION
+
+Concatenate __FILE__s while keeping only one copy of redundant overlaps.
+
+*-h, --help*::
+  Print the help message and exit.
+
+*-o, --output*=__FILE__::
+  Write output to __FILE__ instead of stdout.
+
+*-v, --verbose*::
+  Enable verbose log messages on stderr.
+
+== RESOURCES
+
+*Source repository:* <https://github.com/druckdev/overcat>
+
+== COPYING
+
+Copyright \(C) 2022 Julian Prein <druckdev@protonmail.com>.
+Use of this software is granted under the terms of the MIT License
+<https://mit-license.org>.

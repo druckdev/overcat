@@ -1,0 +1,60 @@
+'\" t
+.\"     Title: overcat
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 09/19/2022
+.\"    Manual: overcat manual
+.\"    Source: overcat 0.0.1
+.\"  Language: English
+.\"
+.TH "OVERCAT" "1" "09/19/2022" "overcat 0\&.0\&.1" "overcat manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+overcat \- Concatenate overlapping files
+.SH "SYNOPSIS"
+.sp
+\fBovercat\fR [\fIOPTION\fR]\&... \fIFILE\fR\&...
+.SH "DESCRIPTION"
+.sp
+Concatenate \fIFILE\fRs while keeping only one copy of redundant overlaps\&.
+.PP
+\fB\-h, \-\-help\fR
+.RS 4
+Print the help message and exit\&.
+.RE
+.PP
+\fB\-o, \-\-output\fR=\fIFILE\fR
+.RS 4
+Write output to
+\fIFILE\fR
+instead of stdout\&.
+.RE
+.PP
+\fB\-v, \-\-verbose\fR
+.RS 4
+Enable verbose log messages on stderr\&.
+.RE
+.SH "RESOURCES"
+.sp
+\fBSource repository:\fR https://github\&.com/druckdev/overcat
+.SH "COPYING"
+.sp
+Copyright (C) 2022 Julian Prein <druckdev@protonmail\&.com>\&. Use of this software is granted under the terms of the MIT License https://mit\-license\&.org\&.
