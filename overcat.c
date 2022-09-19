@@ -26,6 +26,7 @@ print_usage()
 	printf("\n");
 	printf("  -h, --help           Print the help message and exit.\n");
 	printf("  -o, --output=FILE    Write output to FILE instead of stdout.\n");
+	printf("  -v, --verbose        Enable verbose log messages on stderr.\n");
 }
 
 /*
@@ -67,12 +68,15 @@ main(int argc, char* argv[])
 {
 	// Defaults that can be overridden by some flags
 	FILE* out = stdout;
+	int verbose = 0;
 
-	char shortopts[] = "ho:";
+	// NOTE: When changing something here, remember to update `print_usage`.
+	char shortopts[] = "ho:v";
 	struct option longopts[] = {
 		// const char *name, int has_arg, int *flag, int val
 		{"help",    0, NULL, 'h'},
 		{"output",  1, NULL, 'o'},
+		{"verbose", 0, NULL, 'v'},
 		{0} // The last element has to be filled with zeros.
 	};
 
@@ -88,6 +92,9 @@ main(int argc, char* argv[])
 		case 'o':
 			if (!(out = open_file(optarg, "w")))
 				return EXIT_FAILURE;
+			break;
+		case 'v':
+			verbose = 1;
 			break;
 		default:
 			fprintf(stderr, "%s: unrecognized option '%s'\n", PROG_NAME, argv[optind]);
@@ -169,7 +176,8 @@ main(int argc, char* argv[])
 				break;
 		}
 
-		fprintf(stderr, "%s: Overlap of %lu bytes.\n", PROG_NAME, len);
+		if (verbose)
+			fprintf(stderr, "%s: Overlap of %lu bytes.\n", PROG_NAME, len);
 
 		// Write the rest
 		fseek(files[i], len, SEEK_SET);
